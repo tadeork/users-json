@@ -5,42 +5,31 @@ function generateUsers() {
 	var users = [];
 	var posts = [];
 
-	for (var id = 0; id < 20; id++) {
-		var lastName = faker.name.lastName();
-		var firstName = faker.name.firstName();
-		var email = faker.internet.email();
-		var userName = faker.internet.userName();
-		var avatar = faker.image.avatar();
+	for (var id = 0; id < 5; id++) {
+		var data = {};
+		data.lastName = faker.name.lastName();
+		data.firstName = faker.name.firstName();
+		data.email = faker.internet.email();
+		data.userName = faker.internet.userName();
+		data.password = '123abc';
+		data.avatar = faker.image.avatar();
+		data.friends = [];
 
-		for (var postId = 0; postId < 10; postId++) {
-			var contentPost = faker.lorem.paragraph();
-
-			posts.push({
-				"post_id": postId,
-				"content": contentPost,
-				"likes": '0'
-			});
+		for (var postId = 0; postId < 3; postId++) {
+			content = {};
+			content.contentPost = faker.lorem.paragraph();
+			content.id = postId;
+			content.likes = 0;
+			posts.push(content);
 		}
-
-		users.push({
-			"id": id,
-			"first_name": firstName,
-			"last_name": lastName,
-			"email": email,
-			"user_name": userName,
-			"password": "123abc",
-			"avatar": avatar,
-			"posts": posts,
-			"friends": []
-		});
-
+		data.posts = posts;
+		users.push(data);
 		posts = [];
 	}
-	fs.writeFile('data.json', JSON.stringify(users), (err) => {
-		if (err) throw err;
-		console.log('Usuarios creados! \nVer archivo data.json');
-	});
-
+	return {"users": users};
 }
 
-generateUsers();
+fs.writeFile('data.json', JSON.stringify(generateUsers()), (err) => {
+	if (err) throw err;
+	console.log('Usuarios creados! \nVer archivo data.json');
+});

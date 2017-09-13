@@ -2,24 +2,23 @@
 
 Produce un archivo JSON con 20 usuarios y 10 posts cada uno. Su estructura es:
 
-    [{
+
     {
-        "id": 0,
-        "first_name": "Jayson",
-        "last_name": "Osinski",
-        "email": "Fermin51@gmail.com",
-        "user_name": "Wilfrid.Koepp59",
-        "password": "123abc",
-        "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/madebybrenton/128.jpg",
-        "posts": [
-            {
-                "post_id": 0,
-                "content": "Consectetur qui quam eum dolor sed et magnam nostrum dignissimos. Atque consectetur et pariatur voluptatibus necessitatibus assumenda quam ut. Velit aut quia quia dolore.",
-                "likes": "0"
-            },
-	.
-    .
-    .
+     "users": [
+        {
+            "lastName": "Kuhlman",
+            "firstName": "Leola",
+            "email": "Horacio.Collins@yahoo.com",
+            "userName": "Murphy.Kling20",
+            "password": "123abc",
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/barputro/128.jpg",
+            "friends": [],
+            "posts": [
+                {
+                    "contentPost": "Vero rerum officia. Natus dolorem laborum itaque aut quos nobis nobis asperiores et.",
+                    "id": 0,
+                    "likes": 0
+                },
 
 ## Requisitos
 
@@ -30,3 +29,5 @@ Es necesario tener instalado NodeJS y json-server, preferentemente realizar todo
     $ npm install
     $ node users.js
     $ json-server --watch data.json
+
+Es accesible a través de http://locahost:3000/users
