@@ -1,8 +1,7 @@
 # Datos de usuario falsos
 
-----
 ## Requisitos
-Es necesario tener instalado NodeJS y json-server, preferentemente realizar todo esto acompa√ado de un mate amargo.
+Es necesario tener instalado NodeJS y json-server, preferentemente realizar todo esto acompa√±ado de un mate amargo.
 
 ## Modo de uso
 
