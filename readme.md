@@ -1,6 +1,6 @@
 # Datos de usuario falsos
 
-Produce un archivo JSON con 20 usuarios y 10 posts cada uno. Su estructura es:
+Produce un archivo JSON con 5 usuarios y 3 posts cada uno. Su estructura es:
 
 
     {
