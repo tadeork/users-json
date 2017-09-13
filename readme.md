@@ -14,7 +14,7 @@ Produce un archivo JSON con 20 usuarios y 10 posts cada uno. Su estructura es:
         "posts": [
             {
                 "post_id": 0,
-                "content": "Consectetur qui quam eum dolor sed et magnam nostrum dignissimos. Atque consectetur et pariatur voluptatibus necessitatibus assumenda quam ut. Velit aut quia quia dolore.",
+                "content": "Consectetur qui quam eum dolor sed et magnam nostrum dignissimos.",
                 "likes": "0"
             },
 	.
