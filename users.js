@@ -6,24 +6,25 @@ function generateUsers() {
 	var posts = [];
 
 	for (var id = 0; id < 5; id++) {
-		var data = {};
-		data.lastName = faker.name.lastName();
-		data.firstName = faker.name.firstName();
-		data.email = faker.internet.email();
-		data.userName = faker.internet.userName();
-		data.password = '123abc';
-		data.avatar = faker.image.avatar();
-		data.friends = [];
+		var user = {};
+		user.id = id;
+		user.lastName = faker.name.lastName();
+		user.firstName = faker.name.firstName();
+		user.email = faker.internet.email();
+		user.userName = faker.internet.userName();
+		user.password = '123abc';
+		user.avatar = faker.image.avatar();
+		user.friends = [];
 
 		for (var postId = 0; postId < 3; postId++) {
-			content = {};
-			content.contentPost = faker.lorem.paragraph();
-			content.id = postId;
-			content.likes = 0;
-			posts.push(content);
+			post = {};
+			post.id = postId;
+			post.contentPost = faker.lorem.paragraph();
+			post.likes = 0;
+			posts.push(post);
 		}
-		data.posts = posts;
-		users.push(data);
+		user.posts = posts;
+		users.push(user);
 		posts = [];
 	}
 	return {"users": users};
