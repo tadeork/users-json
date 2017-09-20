@@ -16,19 +16,39 @@ function generateUsers() {
 		user.avatar = faker.image.avatar();
 		user.friends = [];
 
-		for (var postId = 0; postId < 3; postId++) {
+		users.push(user);
+	}
+	
+	users.forEach(user => {
+		posts.push(generatePosts(user.id));
+		for (var postId = 0; postId < 2; postId++) {
 			post = {};
+			post.uid = userId;
 			post.id = postId;
 			post.contentPost = faker.lorem.paragraph();
 			post.likes = 0;
 			post.created = faker.date.past();
 			posts.push(post);
 		}
-		user.posts = posts;
-		users.push(user);
-		posts = [];
-	}
-	return {"users": users};
+	});
+
+	return {"users": users, "posts": posts};
+}
+
+function generatePosts(userId) {
+	var posts = [];
+
+	for (var postId = 0; postId < 2; postId++) {
+		post = {};
+		post.uid = userId;
+		post.id = postId;
+		post.contentPost = faker.lorem.paragraph();
+		post.likes = 0;
+		post.created = faker.date.past();
+		posts.push(post);
+	} 
+
+	return posts;
 }
 
 fs.writeFile('data.json', JSON.stringify(generateUsers()), (err) => {
