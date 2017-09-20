@@ -21,6 +21,7 @@ function generateUsers() {
 			post.id = postId;
 			post.contentPost = faker.lorem.paragraph();
 			post.likes = 0;
+			post.created = faker.date.past();
 			posts.push(post);
 		}
 		user.posts = posts;
